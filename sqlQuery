@@ -1,0 +1,16 @@
+CREATE TABLE employees (
+id NUMBER PRIMARY KEY,
+surname VARCHAR,
+experience NUMBER);
+
+INSERT INTO employees (id, surname, experience)
+VALUES    (1, 'Журавлёв', 9),
+          (2, 'Родов', 14),
+          (3, 'Апасов', 29),
+          (4, 'Бобошин', 6);
+
+SELECT surname
+FROM employees
+ORDER BY experience DESC
+OFFSET 1 ROW
+FETCH NEXT 1 ROW ONLY
